@@ -41,6 +41,12 @@ interface DetailsInterface
      */
     public function getCouponStatus();
 
+        /**
+     * @return int
+     */
+    public function getCouponOperation();
+
+
     /**
      * @param string
      * @return bool

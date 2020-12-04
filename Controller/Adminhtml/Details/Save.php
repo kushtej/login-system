@@ -95,8 +95,9 @@ class Save extends Action
         $data = [
             'coupon_name' => $formData['coupon_name'],
             'coupon_rule' => $formData['coupon_rule'],
-            'end_date' => $formData['vendor_end_date'],
             'start_date' => $formData['start_date'],
+            'end_date' => $formData['end_date'],
+            'coupon_operation' => $formData['coupon_operation'],
             'coupon_status' => $formData['coupon_status']
         ];
 

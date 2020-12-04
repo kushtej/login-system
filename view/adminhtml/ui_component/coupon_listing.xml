@@ -184,34 +184,7 @@
         
         
         
-        
-        
-        <!-- <column name="end_date" class="Codilar\CouponModule\Ui\Component\Listing\Column\Thumbnail" sortOrder="1">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
-                    <item name="sortable" xsi:type="boolean">false</item>
-                    <item name="has_preview" xsi:type="string">1</item>
-                    <item name="label" xsi:type="string" translate="true">Image</item>
-                </item>
-            </argument>
-        </column> -->
-
-
-
-
-        <column name="id">
-            <settings>
-                <label>Coupon Name</label>
-                <editor>
-                    <editorType>text</editorType>
-                </editor>
-            </settings>
-        </column>
-        
-        
-        
-        <column name="coupon_name">
+        <column name="coupon_rule">
             <settings>
                 <label>Rule</label>
                 <editor>
@@ -219,10 +192,9 @@
                 </editor>
             </settings>
         </column>
+
         
-        
-        
-        <column name="start_date">
+     <column name="coupon_name">
             <settings>
                 <label>Coupon Code</label>
                 <editor>
@@ -233,15 +205,15 @@
         
         
         
-        
-        
-        <column name="coupon_rule">
+        <column name="start_date">
             <settings>
-                <filter>text</filter>
-                <label translate="true">Start</label>
+                <label>Start</label>
+                <editor>
+                    <editorType>text</editorType>
+                </editor>
             </settings>
         </column>
-
+        
         <column name="end_date">
             <settings>
                 <filter>text</filter>
@@ -249,6 +221,7 @@
             </settings>
         </column>
         
+
 
         <column name="coupon_status">
             <settings>
@@ -258,33 +231,7 @@
                 </editor>
             </settings>
         </column>        
-        
-        
-        
-        <!-- <column name="coupon_name">
-            <settings>
-                <label>Priority</label>
-                <editor>
-                    <editorType>text</editorType>
-                    
-                </editor>
-            </settings>
-        </column>
-         -->
-        
-        
-        <!-- <column name="coupon_rule">
-            <settings>
-                <label>Link</label>
-                <editor>
-                    <editorType>text</editorType>
-                </editor>
-            </settings>
-        </column>
-         -->
-        
-        
-        
+
         <actionsColumn name="actions" class="Codilar\CouponModule\Ui\Component\Listing\Column\Action">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -294,7 +241,6 @@
                 </item>
             </argument>
         </actionsColumn>
-
 
     </columns>
 </listing>

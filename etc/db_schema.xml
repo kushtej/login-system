@@ -8,6 +8,8 @@
         <column xsi:type="varchar" name="start_date" nullable="false"
                 comment="Coupon Start Date"/>
         <column xsi:type="varchar" name="coupon_rule" nullable="false" comment="RULE"/>
+        <column xsi:type="int" name="coupon_operation" nullable="false" comment="Fixed/Percentage"/>
+        <column xsi:type="int" name="coupon_reducing_value" nullable="false" comment="Value"/>
         <column xsi:type="varchar" name="end_date" nullable="false" comment="Coupon END Date"/>
         <column xsi:type="int" name="coupon_status" nullable="false" comment="Status"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">

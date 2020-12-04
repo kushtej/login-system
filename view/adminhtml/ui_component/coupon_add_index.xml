@@ -53,27 +53,10 @@
         </field>
 
 
-
-        <field name="coupon_name" sortOrder="20" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">coupon_name</item>
-                </item>
-            </argument>
-            <settings>
-                <validation>
-                    <rule name="required-entry" xsi:type="boolean">true</rule>
-                </validation>
-                <dataType>text</dataType>
-                <label translate="true">Rule</label>
-                <dataScope>coupon_name</dataScope>
-            </settings>
-        </field>
-
         <field name="coupon_rule" sortOrder="40" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">Coupon Code</item>
+                    <item name="source" xsi:type="string">coupon_rule</item>
                     <item name="class" xsi:type="string">Codilar\CouponModule\Ui\Component\Form\Element\Input</item>
                 </item>
             </argument>
@@ -82,10 +65,30 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>textRange</dataType>
-                <label translate="true">Coupon Code</label>
+                <label translate="true">Coupon Rule</label>
                 <dataScope>coupon_rule</dataScope>
             </settings>
         </field>
+
+
+       <field name="coupon_name" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">coupon_name</item>
+                    <item name="class" xsi:type="string">Codilar\CouponModule\Ui\Component\Form\Element\Input</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>textRange</dataType>
+                <label translate="true">Coupon Name</label>
+                <dataScope>coupon_name</dataScope>
+            </settings>
+        </field>
+
+
         
 
 
@@ -110,10 +113,11 @@
 
 
 
-        <field name="vendor_end_date" formElement="date">
+
+        <field name="end_date" formElement="date">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">vendor_end_date</item>
+                    <item name="source" xsi:type="string">end_date</item>
                     <item name="class" xsi:type="string">Codilar\CouponModule\Ui\Component\Form\Element\Input</item>
                 </item>
             </argument>
@@ -125,44 +129,37 @@
                 <dataType>text</dataType>
                 <label translate="true">End</label>
                 <visible>true</visible>
-                <dataScope>vendor_end_date</dataScope>
+                <dataScope>end_date</dataScope>
             </settings>
         </field>
 
-
-
-        
-        <!-- <field name="vendor_end_date" sortOrder="40" formElement="end_dateUploader">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">end_date</item>
-                </item>
-            </argument>
+        <field name="coupon_operation" formElement="select">
             <settings>
-                <elementTmpl>ui/form/element/uploader/end_date</elementTmpl>
-                <dataType>string</dataType>
-                <label translate="true">Vendor Image</label>
-                <visible>true</visible>
-                <required>false</required>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Status</label>
+                <dataScope>coupon_operation</dataScope>
             </settings>
             <formElements>
-                <end_dateUploader>
+                <select>
                     <settings>
-                        <required>false</required>
-                        <uploaderConfig>
-                            <param xsi:type="url" name="url" path="coupon/details/saveImage"/>
-                        </uploaderConfig>
-                        <previewTmpl>Magento_Catalog/end_date-preview</previewTmpl>
-                        <openDialogTitle>Media Gallery</openDialogTitle>
-                        <initialMediaGalleryOpenSubpath>catalog/category</initialMediaGalleryOpenSubpath>
-                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
-                        <maxFileSize>4194304</maxFileSize>
+                        <options>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">1</item>
+                                <item name="label" xsi:type="string">Fixed</item>
+                            </option>
+                            <option name="2" xsi:type="array">
+                                <item name="value" xsi:type="string">0</item>
+                                <item name="label" xsi:type="string">Percentage</item>
+                            </option>
+                        </options>
+                        <caption  translate="true" >-- Please Select --</caption>
                     </settings>
-                </end_dateUploader>
+                </select>
             </formElements>
-        </field> -->
-
-
+        </field>
 
         
         <field name="coupon_status" formElement="select">
@@ -192,5 +189,8 @@
                 </select>
             </formElements>
         </field>
+
+
+
     </fieldset>
 </form>

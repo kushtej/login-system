@@ -87,6 +87,26 @@ class Details extends AbstractModel
         return $this->setData('end_date', $end_date);
     }
 
+
+     /**
+     * @return int
+     */
+    public function getCouponOpeation()
+    {
+        return $this->getData('coupon_operation');
+    }
+
+    /**
+     * @param $operation
+     * @return Details
+     */
+    public function setCouponOperation($operation)
+    {
+        return$this->setData('coupon_operation', $operation);
+    }
+
+
+
     /**
      * @return int
      */
