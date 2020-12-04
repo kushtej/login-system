@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="codilar_coupon_details" resource="default" engine="innodb" comment="Codilar Coupon Details">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true"
+                comment="My ID"/>
+        <column xsi:type="varchar" name="coupon_name" nullable="false" comment="Coupon Name"/>
+        <column xsi:type="varchar" name="start_date" nullable="false"
+                comment="Coupon Start Date"/>
+        <column xsi:type="varchar" name="coupon_rule" nullable="false" comment="RULE"/>
+        <column xsi:type="varchar" name="end_date" nullable="false" comment="Coupon END Date"/>
+        <column xsi:type="int" name="coupon_status" nullable="false" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="CODILAR_COUPON_DETAILS_UNIQUE">
+            <column name="coupon_name"/>
+        </constraint>
+    </table>
+</schema>
+

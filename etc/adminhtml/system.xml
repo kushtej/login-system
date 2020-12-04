@@ -1,0 +1,39 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar_extension_tab" translate="label" sortOrder="100">
+            <label>Codilar</label>
+        </tab>
+        <section id="coupon" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Coupon Details</label>
+            <tab>codilar_extension_tab</tab>
+            <resource>Codilar_CouponModule::details_config</resource>
+            <group id="details" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Vendor Images Configuration</label>
+                <field id="thumbnail" translate="label" type="end_date" sortOrder="12" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Thumbnail</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png</comment>
+                    <backend_model>Codilar\CouponModule\Model\SaveImage</backend_model>
+                    <base_url type="media" scope_info="1">codilar/banner</base_url>
+                    <depends>
+                        <field id="type">end_date</field>
+                    </depends>
+                </field>
+                <field id="placeholder" translate="label" type="end_date" sortOrder="12" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>PlaceHolder</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png</comment>
+                    <backend_model>Codilar\CouponModule\Model\SaveImage</backend_model>
+                    <base_url type="media" scope_info="1">codilar/banner</base_url>
+                    <depends>
+                        <field id="type">end_date</field>
+                    </depends>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
