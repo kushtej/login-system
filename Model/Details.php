@@ -110,6 +110,24 @@ class Details extends AbstractModel
     /**
      * @return int
      */
+    public function getCouponReducingValue()
+    {
+        return $this->getData('coupon_reducing_value');
+    }
+
+    /**
+     * @param $value
+     * @return Details
+     */
+    public function setCouponReducingValue($value)
+    {
+        return$this->setData('coupon_reducing_value', $value);
+    }
+
+
+    /**
+     * @return int
+     */
     public function getCouponStatus()
     {
         return $this->getData('coupon_status');

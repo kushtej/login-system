@@ -36,6 +36,13 @@ interface DetailsInterface
      */
     public function getRule();
 
+
+     /**
+     * @return int
+     */
+    public function getCouponReducingValue();
+
+
     /**
      * @return int
      */

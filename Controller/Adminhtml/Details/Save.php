@@ -98,6 +98,7 @@ class Save extends Action
             'start_date' => $formData['start_date'],
             'end_date' => $formData['end_date'],
             'coupon_operation' => $formData['coupon_operation'],
+            'coupon_reducing_value' => $formData['coupon_reducing_value'],
             'coupon_status' => $formData['coupon_status']
         ];
 
@@ -123,10 +124,12 @@ class Save extends Action
             try {
                 $model = $this->detailsRepository->load($formData['id']);
                 $model->setCouponName($data['coupon_name']);
-                $model->setVendorDate($data['start_date']);
-                $model->setLink($data['coupon_rule']);
-                $model->setImage($data['end_date']);
-                $model->setAccountStatus($data['coupon_status']);
+                $model->setStartDate($data['start_date']);
+                $model->setRule($data['coupon_rule']);
+                $model->setEndDate($data['end_date']);
+                $model->setCouponOperation($data['coupon_operation']);
+                $model->setCouponReducingValue($data['coupon_reducing_value']);
+                $model->setCouponStatus($data['coupon_status']);
                 $this->detailsRepository->save($model);
             } catch (AlreadyExistsException $exception) {
                 $this->messageManager->addErrorMessage(__('Duplicate coupon'));
