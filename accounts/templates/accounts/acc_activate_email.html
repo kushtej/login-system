@@ -1,0 +1,31 @@
+
+{% autoescape off %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <h1>Verify your email to finish signing up with Us!</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+        <h3>Hey {{ user.username }},</h3>  
+        <p>Please confirm that <b color='black'>{{ user.email }}</b> is your email address and click on the below link to confirm your email,
+            http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}<br><br>  </p>
+            <h3>If you think, it's not you, then just ignore this email.</h3>  
+    </div>
+    </div>    
+</div>
+</body>
+</html>
+{% endautoescape %}

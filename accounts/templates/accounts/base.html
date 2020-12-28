@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      {% if user.is_authenticated %}
+      <a href="{% url 'accounts:homepage_view' %}" class="navbar-brand">Login-System</a>  
+      {% else %}
+      <a href="{% url 'accounts:login_view' %}" class="navbar-brand">Login-System</a>
+      {% endif %}
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          {% if user.is_authenticated %}  
+          <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'accounts:profile' user.username %}" class="nav-item nav-link">Profile</a>
+                <a href="#" class="nav-item nav-link">Messages</a>
+                <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+            </div>
+            {% endif %}
+            
+            <div class="navbar-nav ml-auto">
+              {% if user.is_authenticated %}
+              <a href="{% url 'accounts:logout' %}" class="nav-item nav-link active">Logout</a>
+            {% else %}
+              <a href="{% url 'accounts:login_view' %}" class="nav-item nav-link ac tive">Login</a>
+              <a href="{% url 'accounts:signup_view' %}" class="nav-item nav-link active">Signup</a>
+            </div>
+            {% endif %}
+
+        </div>
+    </nav>
+</div>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{% static 'accounts/js/main.js' %}" type="text/javascript"></script>
+
+
+  <!-- <div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div> -->
+
+    {%block body_block%}
+
+    {%endblock%}
+
+</body>
+
+</html>
