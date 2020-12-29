@@ -1,6 +1,16 @@
 # Login System
 
-The Perfect Login System with email verification that can be used as an **extention** to my future Django Projects
+The **Perfect Login System** with email verification, Password reset with zero vulnerabilities that can be used as an **extention** to my future Django Projects.
+To use it Just paste the accounts app in the directory and add the accounts in `INSTALLED_APPS` in the `settings.py` like this and you are good to go. :)
+```
+INSTALLED_APPS = [
+    ...
+    ...
+    ...
+    ...
+    'accounts',
+]
+```
 
 ## Installation and Project Setup :
 
