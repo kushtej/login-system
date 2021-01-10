@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'login_system',
         'USER': 'root',
-        'PASSWORD': 'Kush007_tej',
+        'PASSWORD': 'root',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
@@ -107,8 +107,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
 EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_PASSWORD = 'YOUR_PASSWORD'  #Your password
-EMAIL_HOST_USER = 'YOUREMAIL.0gpa@gmail.com'  #your email
+EMAIL_HOST_PASSWORD = 'PASSWORD'  #Your password
+EMAIL_HOST_USER = 'EMAIL@gmail.com'  #your email
 EMAIL_PORT = 465  
 EMAIL_USE_SSL = True  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
